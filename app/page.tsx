@@ -1,3 +1,4 @@
+import Users from "@/components/Users";
 
 async function fetchUsers() {
   const res = await fetch("https://reqres.in/api/users");
@@ -13,9 +14,7 @@ const IndexPage = async () => {
   return (
     <div>
       <h1>Index Page</h1>
-      <div>
-        { JSON.stringify(users) }
-      </div>
+      <Users users={users}></Users>
     </div>
   )
 }
