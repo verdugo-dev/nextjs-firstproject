@@ -13,7 +13,6 @@ const IndexPage = async () => {
 
   return (
     <div>
-      <h1>Index Page</h1>
       <Users users={users}></Users>
     </div>
   )

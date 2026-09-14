@@ -1,9 +1,20 @@
+"use client"
+
+import { useRouter } from "next/navigation";
+
 const Users = ({ users }: { users: any[] }) => {
+
+  const router = useRouter();
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {users.map((user: any) => (
           <div
+            onClick={() => {
+              console.log(`User clicked: ${user.first_name} ${user.last_name}`);
+              router.push(`/users/${user.id}`);
+            }}
             key={user.id}
             className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-500/10"
           >
